@@ -37,20 +37,20 @@ double funcion(double x) {
     x1 = ((x-4.0)*(x-4.0)*(x-4.0));
     x2 = 2.0*x;
     return ((0.2*x1)-x2)+12.0;;
-} /* f */
+}
 
 double Trapecio(double left_endpt, double right_endpt, int trap_count, double base_len) {
-  double estimate, x;
+  double val_estimado, x;
   int i;
 
-  estimate = (funcion(left_endpt) + funcion(right_endpt)) / 2.0;
+  val_estimado = (funcion(left_endpt) + funcion(right_endpt)) / 2.0;
   for (i = 1; i <= trap_count - 1; i++) {
     x = left_endpt + i * base_len;
-    estimate += funcion(x);
+    val_estimado += funcion(x);
   }
-  estimate = estimate * base_len;
+  val_estimado = val_estimado * base_len;
 
-  return estimate;
+  return val_estimado;
 }
 
 
